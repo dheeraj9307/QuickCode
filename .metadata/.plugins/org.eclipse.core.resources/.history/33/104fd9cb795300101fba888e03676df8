@@ -1,0 +1,26 @@
+package dheeraj.java8features;
+
+@FunctionalInterface
+interface MyFunctionalInterface{
+	
+	void doWork();
+	
+	default void log() {
+		System.out.println("Logging from default method...");
+	}
+	
+	static void help() {
+		System.out.println("helping from static method");
+	}
+	
+}
+public class FunctionalInterfaceExample {
+	public static void main(String[] args) {
+		MyFunctionalInterface task =()->System.out.println("This is my functional interface");
+		task.doWork();
+		task.log();
+		MyFunctionalInterface.help();
+		
+	}
+
+}
