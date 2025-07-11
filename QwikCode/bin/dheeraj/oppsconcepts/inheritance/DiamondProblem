@@ -1,0 +1,25 @@
+If two parent classes have the same method, and a child class inherits from both, the compiler cannot decide which method to inherit — this causes ambiguity, 
+known as the Diamond Problem. 
+The Diamond Problem occurs when a class inherits from two classes that have the same method,
+causing ambiguity about which method to inherit. 
+
+// Parent class 1
+class Engine {
+    void start() {
+        System.out.println("Engine starting...");
+    }
+}
+
+// Parent class 2
+class Battery {
+    void start() {
+        System.out.println("Battery starting...");
+    }
+}
+
+// ❌ Not allowed in Java
+// class ElectricCar extends Engine, Battery {  // ERROR
+// }
+Here, Engine and Battery are two parent classes.
+Both have a start() method.
+ElectricCar wants to inherit from both → Compiler won't allow it → Diamond Problem avoided.

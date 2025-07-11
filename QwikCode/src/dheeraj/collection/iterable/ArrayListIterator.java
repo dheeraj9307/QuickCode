@@ -16,26 +16,21 @@ java.util.NoSuchElementException
  */
 package dheeraj.collection.iterable;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ArrayListIterator {
 	public static void main(String[] args) {
 		 System.out.println("Using Iterator (forward):");
-		List<String> city=new ArrayList<String>();
+		List<String> city=new ArrayList<>();
 		 city.add("delhi");
 		 city.add("Kolkata");
 		 city.add("mumbai");
-		 
-		 Iterator<String>itr=city.iterator();
-		 
-		 while(itr.hasNext()) {
-			 String cities = itr.next();
-			
+
+		 for (String cities : city) {
 			 System.out.println(cities);
-			 
+
 		 }
-		
+
 	}
 
 }

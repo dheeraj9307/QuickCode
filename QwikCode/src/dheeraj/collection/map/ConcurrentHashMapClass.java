@@ -1,5 +1,5 @@
 /*
-Map: Key-value pair with unique key(store data as a key-value pair where each key is unique 
+Map: Key-value pair with unique key(store data as a key-value pair where each key is unique
 but value can be different/duplicates).
 ConcurrentHashMap: Thread-safe version of HashMap for use in multi-threaded environments.
 - Stores key-value pairs where keys are unique, values can be duplicate.
@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ConcurrentHashMapClass {
 public static void main(String[] args) {
-	
+
 	Map<String, Integer> product = new ConcurrentHashMap<>();
 
 	product.put("LG", 12000);
@@ -32,7 +32,7 @@ public static void main(String[] args) {
 
 	product.put("LG", 1000);
 	System.out.println("Latest value for 'LG': " + product);
-	
+
      }
 }
 

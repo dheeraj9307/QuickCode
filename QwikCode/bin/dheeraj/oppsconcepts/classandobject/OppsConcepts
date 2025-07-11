@@ -1,0 +1,10 @@
+What is OOPS IN JAVA explain its principal? 
+💡OOPs is a  (Object-Oriented Programming System), 
+It  is a programming paradigm based on the concept of objects and classes for organizing code. It is widely used in Java to achieve modularity, reusability, and maintainability.
+It is based on four main principles (or pillars):
+🔹 Encapsulation – Hiding internal data and providing controlled access.
+🔹 Inheritance – Acquiring properties and behaviours from a parent class.
+🔹 Polymorphism – One interface, many forms (overriding/overloading).
+🔹 Abstraction – Hiding complexity, exposing only essential features. 
+Note: Paradigm means a style or approach to writing and organizing code that defines how problems are solved and how programs are structured. 
+Modularity is the concept of breaking a program into smaller, independent, and reusable parts called modules. 

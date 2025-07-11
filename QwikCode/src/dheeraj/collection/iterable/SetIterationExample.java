@@ -31,10 +31,10 @@ public class SetIterationExample {
         }
 
         System.out.println("\nAfter removal: " + fruits);
-    
+
 	}
 
-} 
+}
 /*
  Using enhanced for-loop:
 Apple

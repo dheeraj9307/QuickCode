@@ -1,5 +1,5 @@
 /*
-Fail-Safe: If I modify a collection during iteration and it does not throw a ConcurrentModificationException, 
+Fail-Safe: If I modify a collection during iteration and it does not throw a ConcurrentModificationException,
 this behavior is known as fail-safe. This is possible because the fail-safe iterator works on a clone or copy of the collection,
 or it allows concurrent modifications safely (e.g., CopyOnWriteArrayList, ConcurrentHashMap).
 */

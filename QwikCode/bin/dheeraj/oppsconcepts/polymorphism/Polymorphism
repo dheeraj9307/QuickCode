@@ -1,0 +1,22 @@
+If one task is performed in different ways is known as Polymorphism. 
+It allows a method to behave differently based on the object or parameters,
+Polymorphism is applicable only on method.
+There are two ways It can achieve Polymorphism- 
+i)Overriding(Run Time Polymorphism) 
+ii)Overloading(Compile Time Polymorphism)  
+METHOD-Overriding: 
+Here we inherit a method from parent class and modify its logic in child class by once again creating same method in child class.
+Or 
+Changing the functionality of parents class method inside the sub class or child class is known as method overriding. 
+Rules:
+• Method name and parameters must remain the same.
+• Return type must be the same or a subclass (covariant) of the original return type.
+• It is used for runtime polymorphism.
+METHOD-OVERLOADING:
+• If we created more than one method with the same name in the same class provided, they have different number of arguments or different type of arguments is known as method-overloading.
+Or 
+Two or more methods(multiple methods)have the same name, in a same class, but passing the parameter should be different
+means different number of arguments or type of arguments is known as method overloading. 
+Or
+When two or more methods have the same name in the same class but with 
+different parameters — either in number or type — it is known as method overloading.

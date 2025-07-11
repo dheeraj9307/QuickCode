@@ -6,7 +6,7 @@ public class SIB {
 			System.out.println("SIB will run");
 		}
 		public static void main(String[] args) {
-			
+
 		}
 
 	}

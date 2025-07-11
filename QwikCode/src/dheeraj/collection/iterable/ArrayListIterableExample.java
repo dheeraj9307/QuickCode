@@ -32,10 +32,10 @@ public class ArrayListIterableExample {
 
         // Enhanced for-loop → internally uses Iterable's iterator()
         System.out.println("Using enhanced for-loop:");
-      
+
         for (String city : cities) {
             System.out.println(city);
-            
+
         }
 
         // Using Iterator explicitly

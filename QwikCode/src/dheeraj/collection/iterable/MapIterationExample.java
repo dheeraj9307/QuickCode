@@ -44,7 +44,7 @@ public class MapIterationExample {
 	        System.out.println("\nAfter removal: " + map);
 	}
 
-} 
+}
 /*
 Using enhanced for-loop (entrySet):
 1 = Java
