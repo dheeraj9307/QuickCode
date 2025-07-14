@@ -8,7 +8,8 @@ or
 In Java, if a method returns null and we try to use it, we get a NullPointerException (NPE).
 To avoid this, Java 8 introduced Optional<T>.
 It helps represent a value that may or may not be present.
- */
+Here i am using Java 8 Optional<T>,  Optional.ofNullable(value) and .orElse(), .isPresent() etc. 
+*/
 package dheeraj.java8optionalclass;
 
 import java.util.Optional;

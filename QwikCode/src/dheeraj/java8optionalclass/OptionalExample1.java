@@ -7,6 +7,7 @@ wrap it in Optional to handle the case gracefully without writing manual null ch
 Simple Explanation:
 In Java, if a method returns null and we try to use it, it causes a NullPointerException (NPE).
 To avoid this, Java 8 introduced Optional<T> to safely represent values that may or may not be present.
+Here i am using manually with the help of if else i.e. if (value != null)
 */
 package dheeraj.java8optionalclass;
 
@@ -51,3 +52,8 @@ public class OptionalExample1 {
 		printEmail(user2);
 	}
 }
+/*
+Dheeraj's Email: Optional.empty
+Patel's Email: Optional[patel@example.com]
+
+ */

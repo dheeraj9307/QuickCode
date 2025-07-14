@@ -1,0 +1,38 @@
+String: 
+->String in Java is an object that represent a sequence of characters.
+->Strings are immutable, meanings once created, their content can not be changed.
+->If I try to change the string, in result i will get a new object. 
+How to create a String: 
+->There are two ways to create a String object. 
+1: Using String Literals 
+String s1= "Employee";
+2:Using the new Keyword
+String s2=  new String("Employee");
+Note:
+->If I am creating an object using String Literals then it will goes into the String Constant Pool.
+->If I am creating an object using new keyword then it will goes into the Heap Memory.
+If I am creating a String with new String("value") it always creates a new object in the heap.
+If the literal "value" is not in the SCP, it will also create an object in the SCP otherwise, 
+it reuses the existing one.
+Note:
+->The  == operator in java is used to compare references of object (means like s1  & s2, not contents in s1 and s2).
+-> Each call to new creates a distinct object on heap, even if the contents is same. 
+->equals() method compare the contents not references.
+When you create a String using new, it always creates one object in the heap.
+The string literal inside ("value") goes to the String Constant Pool (SCP) only if it's not already present.
+If already present, it is reused from SCP. 
+StringBuffer and StringBuilder
+🔹 StringBuffer and StringBuilder are mutable classes in Java, meaning their contents can be changed without creating a new object.
+🔹 StringBuffer is thread-safe (all methods are synchronized), so it's suitable for multithreaded environments — but slower due to synchronization.
+🔹 StringBuilder is not thread-safe (methods are not synchronized), so it's suitable for single-threaded environments and faster than StringBuffer. 
+
+🔹 String is immutable, meaning once created, its content cannot be changed.
+🔹 Because of immutability, String is safe to use in multithreaded environments, but it is not synchronized. Immutable and slower for modificaton.
+🔹 StringBuffer is mutable and thread-safe, as all its methods are synchronized — making it suitable for multithreaded environments but slower than StringBuilder. 
+Speed (Best to Worst):
+➡️ StringBuilder > StringBuffer > String
+StringConstantPool:
+String Constant Pool (SCP) is a memory optimization technique where the JVM stores string literals in a common pool to avoid redundant allocations.
+When a new string literal is created, the JVM checks the pool first — if the string already exists, it reuses the reference instead of creating a new object.
+This helps conserve memory and improve performance. 
+Note: Redundant allocations mean creating multiple copies of the same data unnecessarily in memory. 
