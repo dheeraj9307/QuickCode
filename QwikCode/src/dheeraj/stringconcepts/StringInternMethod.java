@@ -1,3 +1,9 @@
+/*
+What intern() does in Java:
+If the string already exists in the string pool → it returns the reference from the pool.
+If the string does not exist in the string pool → it adds it to the pool 
+and returns the reference from the pool.
+ */
 package dheeraj.stringconcepts;
 
 public class StringInternMethod {

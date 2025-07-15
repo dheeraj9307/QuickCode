@@ -1,0 +1,80 @@
+1:What is Exception Handling?
+Exception handling in Java allows developers to handle runtime errors and maintain the normal flow of the application.
+Java provides five key keywords for exception handling:
+• try- contains code that may cause an Exception.
+• catch-Handles the Exception if it occurs.
+• throw-Manually throws an Exception.
+• throws- Declares exception that method can throw.
+• finally-Runs code after try, whether an exception occurs or not. 
+2:What is an Exception in Java?
+• An Exception is an event that disrupts the normal execution of a program.
+• Exceptions can be:
+    ◦ Built-in (like IOException, NullPointerException)
+    ◦ User-defined (custom exceptions created by developers)
+Types of Exceptions
+•Checked Exception:
+Checked Exception are known by the compiler. Checked Exceptions are known as compile-time-exceptions 
+because they are checked by the compiler during compilation.
+Example-
+ClassNotFoundException- Thrown when a class is not found at run-time due to an incorrect location or missing file.
+IOException- Thrown when an input/output operation fails.
+SQLException- Thrown when a database error occurs.
+FileNotFoundException- Thrown when trying to open a file that doesn’t exist.
+•Unchecked Exception:
+Unchecked Exception are the opposite of Checked Exception, the compiler does not check these exceptions 
+at compile time, even if a programs thrown an Unchecked Exception and we don't handled it. 
+There will be no compilation error.
+OR
+Unchecked Exception: Exceptions that are not checked at compile time 
+and occur during runtime (e.g., NullPointerException, ArithmeticException).
+Example-
+Arithmetic Exception-Thrown for illegal maths operations(e.g..,division by zero).
+NullPointerException-Thrown when accessing methods or fields of null object's.
+ArrayIndexOutBoundException-  when accessing an array with an invalid index.
+try-catch Block
+In Java a try-catch bock is used to handle exceptions. The try block contains code that may throw an exception, and the catch block handles the exception if it occurs. Or 
+    • The try block contains code that might throw an exception. 
+    • The catch block handles specific exceptions.
+try {
+int result = 10 / 0;
+} catch (ArithmeticException e) {
+        System.out.println("Cannot divide by zero");
+}
+What is the purpose of finally Block?
+finally Block
+    • Always executes after the try-catch block, whether an exception occurs or not.
+    • Used to close resources like:
+        ◦ Database connections
+        ◦ File streams
+Note: The finally block always executes after try and catch, never before catch. 
+1.Can a finally block be skipped?
+Answer:
+Yes, the finally block can be skipped, but only in rare situations where the JVM doesn't get a chance to execute it.
+2. When does the finally block not execute?
+The finally block does not execute in the following cases:
+    • System.exit() is called
+    • The JVM crashes (e.g., OutOfMemoryError or fatal error)
+    • The thread is forcibly killed
+    • An infinite loop or long-running operation blocks it
+Is it mendatory to have catch block after try ?
+No, it is not mandatory to have a catch block after a try block in Java.
+You can have:
+    1. try + catch
+    2. try + finally
+    3. try + catch + finally
+Note:Invalid: try alone (compile-time error) 
+Conclusion:
+It’s not mandatory to use catch after try, but you must have either catch or finally (or both) — otherwise, Java will give a compile-time error.
+What happen if the Exception is not Caught?
+If an exception is not caught in Java, the JVM will call the default exception handler, print the stack trace, and terminate the program. This is why proper exception handling is essential for building robust applications. 
+Can we throw an Multiple Exception in Java ?
+Yes, Java allows throwing multiple exceptions, but not at the same time from one throw statement. You can declare multiple exceptions using throws, handle them with multi-catch, or throw different exceptions based on conditions. 
+Can we have try block without catch block ? 
+Yes, we can have a try block without a catch block in Java — but only if we include a finally block.  
+#How to Handle Exceptions in Spring Boot ? **
+ 1. Using @ControllerAdvice + @ExceptionHandler 
+ Step-by-step:
+    1. Create a custom exception (e.g., ResourceNotFoundException)
+    2. Create a global exception handler class using @ControllerAdvice
+    3. Handle specific or generic exceptions using @ExceptionHandler
+   
