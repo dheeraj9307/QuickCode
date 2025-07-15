@@ -1,0 +1,17 @@
+How to Handle Exceptions in Spring Boot ? 
+Explanation (Simple & Clear):
+-I created a custom exception by making a new class that extends RuntimeException. 
+For example, UserNotFoundException. I used this to throw an error from my controller 
+when the user is not found.
+-Instead of writing try-catch everywhere, I used @ControllerAdvice, which helps me handle all exceptions 
+globally in one place.
+-Inside that class, I used @ExceptionHandler to catch specific exceptions 
+like UserNotFoundException and return a proper error message with an HTTP status.
+This makes the code clean and ensures the user always gets a clear error message instead of a crash or raw stack trace.
+Q: What is @ControllerAdvice?
+It’s a special annotation in Spring Boot that allows me to handle exceptions globally. 
+It works like a global try-catch for all controllers.
+Q: What is @ExceptionHandler?
+It is used inside a @ControllerAdvice class or even inside a controller to handle specific exceptions like UserNotFoundException.
+#Line Version:
+I created a custom exception by extending RuntimeException and used @ControllerAdvice with @ExceptionHandler to handle it globally."
