@@ -1,0 +1,61 @@
+String: 
+->String in Java is an object that represent a sequence of characters.
+->Strings are immutable, meanings once created, their content can not be changed.
+->If I try to change the string, in result i will get a new object. 
+How to create a String: 
+->There are two ways to create a String object. 
+1: Using String Literals 
+String s1= "Employee";
+2:Using the new Keyword
+String s2=  new String("Employee");
+StringBuffer and StringBuilder
+🔹 StringBuffer and StringBuilder are mutable classes in Java, meaning their contents can be changed without creating a new object.
+🔹 StringBuffer is thread-safe (all methods are synchronized), so it's suitable for multithreaded environments — but slower due to synchronization.
+🔹 StringBuilder is not thread-safe (methods are not synchronized), so it's suitable for single-threaded environments and faster than StringBuffer. 
+-----------------------------------------------------------------------------------------------
+->If I am creating an object using String Literals then it will goes into the String Constant Pool.
+->If I am creating an object using new keyword then it will goes into the Heap Memory and SCP but before goings
+to the SCP it will check If the literal "value" is not in the SCP then it will  create an object in the SCP otherwise, 
+it reuses the existing one.
+or
+If I create a String using literals, it goes into the String Constant Pool (SCP).
+String a = "hello";
+If I create a String using the new keyword, it creates a new object in the heap,
+but the literal part is checked in SCP — if not there, it gets added;
+otherwise, the existing one is reused.
+String s2 = new String("hello"); // new object in heap, "hello" exists in SCP or not check
+here "hello" is the literal part. 
+but  Not for:
+Custom objects or most other types.
+Student s1 = new Student(); // object always goes to heap, no pooling.
+
+------------------------------------------------------------------------------------------
+== and .equals() are both used for comparison in Java, but they behave differently:
+== Operator:
+Compares references (memory address).
+Checks whether two references point to the same object.
+String a = "hello";
+String b = "hello";
+System.out.println(a == b); // true (because of string pool)
+---------------------------------------------------------------------------
+.equals() Method:
+Compares actual content (value) of the objects.
+In String class, it is overridden to compare character sequences.
+String a = new String("hello");
+String b = new String("hello");
+System.out.println(a == b);      // false (different objects)
+System.out.println(a.equals(b)); // true (same content)
+Summary:
+In case of non-String objects:
+The == operator always compares object references (memory addresses).
+The .equals() method, by default (inherited from Object class), also compares references.
+So, if not overridden, .equals() behaves just like ==.
+But: If .equals() is overridden in a custom class (like in String),
+it is used to compare the actual content or fields of the object.
+You must override it manually in custom classes if you want content-based comparison.
+-----------------------------------------------------------------------------------------
+getClass() method:
+Present in the Object class
+It returns a Class object that represents the runtime class of the object
+
+
