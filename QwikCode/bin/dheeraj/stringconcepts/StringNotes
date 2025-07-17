@@ -25,7 +25,17 @@ StringBuffer and StringBuilder
 🔹 StringBuffer and StringBuilder are mutable classes in Java, meaning their contents can be changed without creating a new object.
 🔹 StringBuffer is thread-safe (all methods are synchronized), so it's suitable for multithreaded environments — but slower due to synchronization.
 🔹 StringBuilder is not thread-safe (methods are not synchronized), so it's suitable for single-threaded environments and faster than StringBuffer. 
-
+Note:
+##StringBuffer is suitable for multithreaded environments
+This means:
+In a multithreaded environment, multiple threads may try to access or modify the same StringBuffer object at the same time.
+StringBuffer is thread-safe because all its methods are synchronized — only one thread can access a method at a time.
+So, it prevents data corruption in a multithreaded environment.
+##StringBuilder is suitable for single-threaded environments
+This means:
+In a single-threaded environment, only one thread is executing — so there is no risk of concurrent access.
+StringBuilder is not thread-safe, but it's faster than StringBuffer because it does not use synchronization.
+--------------------------------------------------------------------------------------------------------
 🔹 String is immutable, meaning once created, its content cannot be changed.
 🔹 Because of immutability, String is safe to use in multithreaded environments, but it is not synchronized. Immutable and slower for modificaton.
 🔹 StringBuffer is mutable and thread-safe, as all its methods are synchronized — making it suitable for multithreaded environments but slower than StringBuilder. 

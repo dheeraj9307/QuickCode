@@ -12,6 +12,9 @@ StringBuffer and StringBuilder
 🔹 StringBuffer and StringBuilder are mutable classes in Java, meaning their contents can be changed without creating a new object.
 🔹 StringBuffer is thread-safe (all methods are synchronized), so it's suitable for multithreaded environments — but slower due to synchronization.
 🔹 StringBuilder is not thread-safe (methods are not synchronized), so it's suitable for single-threaded environments and faster than StringBuffer. 
+Note:
+In multithreading environments means , multiple threads may try to access or modify the same object at the same time.
+In single-threaded environments means , only one thread is running — no risk of concurrent modification.
 -----------------------------------------------------------------------------------------------
 ->If I am creating an object using String Literals then it will goes into the String Constant Pool.
 ->If I am creating an object using new keyword then it will goes into the Heap Memory and SCP but before goings
@@ -57,5 +60,11 @@ You must override it manually in custom classes if you want content-based compar
 getClass() method:
 Present in the Object class
 It returns a Class object that represents the runtime class of the object
+--------------------------------------------------------------------------------
+StringConstantPool:
+String Constant Pool (SCP) is a memory optimization technique where the JVM stores string literals in a common pool to avoid redundant allocations.
+When a new string literal is created, the JVM checks the pool first — if the string already exists, it reuses the reference instead of creating a new object.
+This helps conserve memory and improve performance. 
+Note: Redundant allocations mean creating multiple copies of the same data unnecessarily in memory. 
 
 

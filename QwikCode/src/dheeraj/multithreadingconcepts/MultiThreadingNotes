@@ -1,0 +1,74 @@
+#Multitasking:
+•Performing multiple tasks simultaneously.
+Example: Running VLC, Word, and Browser apps at the same time.
+Improves CPU utilization and system performance.
+#How to achieve multitasking?
+Multitasking can be achieved in two ways: 
+Multiprocessing:
+When a system (OS) is connected to multiple processors (CPUs) to execute multiple processes simultaneously.
+This is suitable at the system or OS level. 
+Multi-threading:
+Executing multiple threads (sub-tasks or smaller units of a process) concurrently within a single program is called multi-threading.
+Multi-threading is suitable at the program or application level. Java provides predefined APIs for multi-threading, 
+such as classes and interfaces like:
+Java Multi-threading APIs
+• Thread class
+• Runnable interface
+• ThreadGroup class
+• Concurrency utilities (java.util.concurrent)
+• Thread pools (ExecutorService)
+#What is a Thread?
+A Thread is a lightweight sub-task or a small part of a program that can run independently.
+Multi-threading means running multiple threads at the same time.
+Real-life Example:
+Imagine a video player app:
+  • One thread plays the video.
+  • Another thread handles audio.
+  • Another thread downloads subtitles.
+All run together without waiting for each other.
+#How to Create a Thread in Java? 
+By extending the Thread class
+By implementing the Runnable interface or Callable interface. 
+1. By Extending the Thread Class
+Steps:
+    1. Create a class that extends the Thread class.
+    2. Override the run() method.
+    3. Create an object of your class.
+    4. Call the start() method to begin thread execution.
+2. By Implementing the Runnable Interface 
+ Steps:
+    1. Create a class that implements Runnable.
+    2. Override the run() method.
+    3. Create an object of your class.
+    4. Pass that object to a Thread constructor.
+    5. Call the start() method.
+#Difference Between Thread Class and Runnable Interface in Java
+& Which one is better and why?
+1. Inheritance vs. Interface
+• Thread is a class — so if I extend it, I can’t extend any other class (since Java supports single inheritance).
+• Runnable is an interface — so I can implement it and still extend another class.
+Runnable is more flexible.
+• Thread class is used when you want to quickly create and run a thread.
+• Runnable is used when you want better design, flexibility, and performance.
+Apart from extending Thread Class or implementing Runnable interface, there are more advanced and modern ways to create threads in Java: 
+✅ 1. By Extending Thread Class (Basic Way) 
+✅ 2. By Implementing Runnable Interface (Preferred for Reuseability) 
+✅ 3. By Using ExecutorService (Thread Pool) 
+✅ 4. By Using Callable and Future 
+✅ 5. By Using CompletableFuture (Java 8+)   
+#What is a Thread Pool?
+A Thread Pool is a group (or pool) of pre-created threads that are reused to execute multiple tasks.
+Instead of creating a new thread for every task, we reuse existing threads from the pool. This saves system resources and boosts performance.
+Real-Life Analogy:
+Imagine a food delivery company with 5 delivery boys (threads).
+Every time a new order (task) comes in, the system assigns it to an available delivery boy instead of hiring a new one.
+#What is ExecutorService?
+ExecutorService is a Java interface provided in java.util.concurrent that manages and controls thread pools.
+It provides methods like:
+  • execute(Runnable task) → For fire-and-forget tasks.
+  • submit(Callable/Runnable) → Returns a Future for result or task tracking.
+  • shutdown() → To gracefully stop the thread pool.
+It is the standard way to manage threads in modern Java instead of using Thread directly.
+    
+    
+    
