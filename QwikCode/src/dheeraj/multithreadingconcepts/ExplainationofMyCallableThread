@@ -1,0 +1,27 @@
+Line 1:
+ExecutorService executor = Executors.newSingleThreadExecutor();
+This line creates a thread pool with only one thread using the ExecutorService. 
+It helps manage threads more efficiently than creating them manually with new Thread().
+
+Line 2:
+Future<String> future = executor.submit(t1);
+Here, I submit my Callable task t1 to the executor. This returns a Future object which represents the result of the task that will be available in the future once the thread finishes execution.
+
+Line 3:
+String result = future.get();
+I use future.get() to retrieve the result returned by the call() method. This line blocks the main thread until the background thread finishes and returns the result."
+# Why Use This Instead of Thread):
+Using ExecutorService with Callable and Future is better than manually handling threads because it provides:
+Better thread management
+Ability to return a result
+Cleaner exception handling
+Scalability (if I use a thread pool with more threads)
+# What happens if the thread takes longer time?
+-future.get() will block until the result is ready. 
+If the thread takes longer, the main thread waits. If I want to limit the waiting time, 
+I can use future.get(timeout, TimeUnit.SECONDS).
+Note:
+timeout, TimeUnit.SECONDS means:
+5: Maximum time to wait,
+suppose if it takes longer than 5 seconds, it throws a TimeoutException.
+TimeUnit.SECONDS:The unit of time (can be SECONDS, MILLISECONDS, MINUTES etc.)

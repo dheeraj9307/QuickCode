@@ -26,3 +26,4 @@ public class MyThread extends Thread {
 	}
 
 }
+//OUTPUT:Thread is running using the Thread class
