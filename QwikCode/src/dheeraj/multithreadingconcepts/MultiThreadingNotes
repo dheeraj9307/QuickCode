@@ -53,9 +53,11 @@ Runnable is more flexible.
 Apart from extending Thread Class or implementing Runnable interface, there are more advanced and modern ways to create threads in Java: 
 ✅ 1. By Extending Thread Class (Basic Way) 
 ✅ 2. By Implementing Runnable Interface (Preferred for Reuseability) 
-✅ 3. By Using ExecutorService (Thread Pool) 
-✅ 4. By Using Callable and Future 
-✅ 5. By Using CompletableFuture (Java 8+)   
+✅ 3. By Implementing the Callable Interface:  
+✅ 4. By Using ExecutorService (Thread Pool) 
+✅ 5. By Using Callable and Future 
+✅ 6. By Using CompletableFuture (Java 8+) 
+✅ 7. By Implementing the Callable Interface:  
 #What is a Thread Pool?
 A Thread Pool is a group (or pool) of pre-created threads that are reused to execute multiple tasks.
 Instead of creating a new thread for every task, we reuse existing threads from the pool. This saves system resources and boosts performance.

@@ -6,7 +6,8 @@ package dheeraj.exceptionhandling;
 public class ThrowExample1 {
    static void checkNumber(int number) {
 	   if(number<0) {
-		   throw new ArithmeticException("Negative Number are not allowed ");
+		   throw new IllegalArgumentException("Negative numbers are not allowed");
+
 	   }
 	   else {
 		   System.out.println("Valid Number : " +number);
@@ -16,9 +17,11 @@ public class ThrowExample1 {
 	   try {
 		   checkNumber(-6); //This will throw an exception  
 	   }
-	   catch(ArithmeticException e) {
+	   catch(IllegalArgumentException e) {
 		   System.out.println("Caught Exception " +e.getMessage());
 	   }
 	   
    }
 }
+//OUTPUT: Caught Exception Negative numbers are not allowed
+

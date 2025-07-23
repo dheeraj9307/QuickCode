@@ -1,0 +1,27 @@
+Singleton Class:
+-We design the class in such that only one object of that class at most can be created.
+✅ Steps to Create a Singleton Class in Java
+Step 1: Create a private static reference variable of the class
+This holds the only object of the class.
+Step 2: Make the constructor private
+This ensures no one can create the object using new from outside the class.
+Step 3: Provide a public static method to return the instance
+This method is used to get the only instance.
+It ensures the object is created only once (lazy initialization).
+Note: 
+if you're creating a singleton for a class,
+the reference variable should be of the same class type — because I want to create and control
+only one instance of that class.
+#Singleton is not thread-safe by default.
+A Singleton can be thread-safe or not thread-safe, depending on how it's implemented.
+#How to make your Singleton thread-safe? 
+Option 1:
+I can make Singleton thread-safe by using Synchronized Method 
+or 
+make a Method Synchronized to get Singleton thread-safe. 
+(synchronized makes sure only one thread can enter this method at a time)
+Option 2: Double-Checked Locking (Efficient)
+Note:
+The volatile keyword forces threads to read and write the variable directly from the main memory —
+not from their local CPU cache.
+So any thread will always see the most up-to-date value
