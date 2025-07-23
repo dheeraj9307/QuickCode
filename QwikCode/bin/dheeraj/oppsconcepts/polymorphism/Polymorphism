@@ -5,13 +5,24 @@ There are two ways It can achieve Polymorphism-
 i)Overriding(Run Time Polymorphism) 
 ii)Overloading(Compile Time Polymorphism)  
 METHOD-Overriding: 
-Here we inherit a method from parent class and modify its logic in child class by once again creating same method in child class.
-Or 
-Changing the functionality of parents class method inside the sub class or child class is known as method overriding. 
-Rules:
-• Method name and parameters must remain the same.
-• Return type must be the same or a subclass (covariant) of the original return type.
-• It is used for runtime polymorphism.
+Changing the functionality of parents class method inside the child class or sub class  is known as method overriding. 
+Rules of Method Overriding in Java:
+1:Same method name and parameters
+→ The method signature must match exactly (name + parameter list).
+2:Same return type or covariant return type
+→ The return type must be the same or a subclass (covariant).
+3:Access modifier cannot be more restrictive
+→ You can widen access (e.g., protected → public), but not narrow it.
+(e.g.,public → protected (narrower access)).
+4:Used for Runtime Polymorphism
+→ JVM decides at runtime which method to call (based on object type).
+5:Use of @Override annotation
+→ Optional but recommended — helps catch errors during compilation.
+Note:
+❌ final, private, and static methods cannot be overridden
+❌ Constructors cannot be overridden
+The child class method cannot have more restrictive access than the parent method;
+it can keep the same or widen it (e.g., protected → public), but not narrow it (e.g., public → protected).
 METHOD-OVERLOADING:
 • If we created more than one method with the same name in the same class provided, they have different number of arguments or different type of arguments is known as method-overloading.
 Or 
@@ -19,4 +30,55 @@ Two or more methods(multiple methods)have the same name, in a same class, but pa
 means different number of arguments or type of arguments is known as method overloading. 
 Or
 When two or more methods have the same name in the same class but with 
-different parameters — either in number or type — it is known as method overloading.
+different parameters — either in number or type — it is known as method overloading.  
+-------------------------------------------------------------------------------------------
+An Exception is an event that disrupts the normal execution of a program.
+Types of Exceptions
+•Checked Exception are known by the compiler. Checked Exceptions are known as compile-time-exceptions 
+because they are checked by the compiler during compilation.
+Example-
+ClassNotFoundException- Thrown when a class is not found at run-time due to an incorrect location or missing file.
+IOException- Thrown when an input/output operation fails.
+SQLException- Thrown when a database error occurs.
+FileNotFoundException- Thrown when trying to open a file that doesn’t exist.
+•Unchecked Exception:
+Unchecked Exception: Exceptions that are not checked at compile time 
+and occur during runtime (e.g., NullPointerException, ArithmeticExceptio ).
+Example-
+Arithmetic Exception-Thrown for illegal maths operations(e.g..,division by zero).
+NullPointerException-Thrown when accessing methods or fields of null object's.
+ArrayIndexOutBoundException-  when accessing an array with an invalid index.
+#Exception In case of METHOD-Overriding: 
+1.If Parent throws nothing
+Parent is safe.
+✅ Child can throw unchecked exceptions (like ArithmeticException, NullPointerException).
+❌ Child cannot throw any checked exception (like IOException) — compiler will give an error.
+2. Parent throws a checked exception
+Example: Parent throws IOException
+✅ Child can throw:
+Same checked exception (IOException)
+Subclass (FileNotFoundException)
+Unchecked exception (NullPointerException, etc.)
+❌ Child cannot throw:
+Superclass (Exception, Throwable)
+New checked exception not declared by parent (SQLException)
+3. Parent throws unchecked exception
+Example: Parent throws RuntimeException
+✅ Child can throw:
+Same or different unchecked exceptions
+❌ Child cannot throw checked exception — parent didn’t declare it.
+🔑 Key Line to Speak in Interview:
+Checked exceptions follow strict rules — must match or be narrower. Unchecked exceptions are flexible — no restrictions, 
+can be thrown anytime.
+or
+Checked exceptions follow strict rules — the child method can only throw the same or a subclass 
+of the parent's checked exception.New or broader checked exceptions are not allowed 
+Note :broader checked exceptions means superclass of the original exception."
+Unchecked exceptions (Runtime exceptions) are flexible — no restrictions at all. They can be added or removed anytime in child methods 
+means 
+ If you're working with unchecked exceptions (like NullPointerException, ArithmeticException, etc.) —
+you can:
+Add them in the child method
+Remove them from the child method
+Do both — no compiler error  
+   

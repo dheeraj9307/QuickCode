@@ -26,7 +26,7 @@ at compile time, even if a programs thrown an Unchecked Exception and we don't h
 There will be no compilation error.
 OR
 Unchecked Exception: Exceptions that are not checked at compile time 
-and occur during runtime (e.g., NullPointerException, ArithmeticException).
+and occur during runtime (e.g., NullPointerException, ArithmeticExceptio n).
 Example-
 Arithmetic Exception-Thrown for illegal maths operations(e.g..,division by zero).
 NullPointerException-Thrown when accessing methods or fields of null object's.
@@ -77,4 +77,40 @@ Yes, we can have a try block without a catch block in Java — but only if we in
     1. Create a custom exception (e.g., ResourceNotFoundException)
     2. Create a global exception handler class using @ControllerAdvice
     3. Handle specific or generic exceptions using @ExceptionHandler
+----------------------------------------------------------------------------------------------
+#Exception In case of METHOD-Overriding: 
+1. Parent throws nothing
+Parent is safe.
+✅ Child can throw unchecked exceptions (like ArithmeticException, NullPointerException).
+❌ Child cannot throw any checked exception (like IOException) — compiler will give an error.
+2. Parent throws a checked exception
+Example: Parent throws IOException
+✅ Child can throw:
+Same checked exception (IOException)
+Subclass (FileNotFoundException)
+Unchecked exception (NullPointerException, etc.)
+❌ Child cannot throw:
+Superclass (Exception, Throwable)
+New checked exception not declared by parent (SQLException)
+3. Parent throws unchecked exception
+Example: Parent throws RuntimeException
+✅ Child can throw:
+Same or different unchecked exceptions
+❌ Child cannot throw checked exception — parent didn’t declare it.
+--------------------------------------------------------------------------------------------
+🔑 Key Line to Speak in Interview:
+Note :
+1:Checked exceptions follow strict rules — must match or be narrower. Unchecked exceptions are 
+flexible — no restrictions, can be thrown anytime.
+or
+Checked exceptions follow strict rules — the child method can only throw the same or a subclass 
+of the parent's checked exception.New or broader checked exceptions are not allowed 
+Note :broader checked exceptions means superclass of the original exception."
+Unchecked exceptions (Runtime exceptions) are flexible — no restrictions at all. They can be added or removed anytime in child methods 
+means 
+ If you're working with unchecked exceptions (like NullPointerException, ArithmeticException, etc.) —
+you can:
+Add them in the child method
+Remove them from the child method
+Do both — no compiler error  
    
