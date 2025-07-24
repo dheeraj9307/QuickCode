@@ -1,3 +1,8 @@
+/*
+sleep() pauses a thread without releasing the lock, usually to delay execution. 
+wait() causes a thread to release the lock and wait until notified. 
+notifyAll() wakes all waiting threads so they can compete to reacquire the lock and continue.
+ */
 package dheeraj.multithreadingconcepts;
 
 class SleepExample {

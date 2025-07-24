@@ -17,6 +17,10 @@ Note:
 -Runnable.run() returns void, but Callable.call() returns a value.
 -ExecutorService manages thread life-cycle for better control.
 -Future.get() blocks until the result is available.
+-I can call future.get() to get the result later (it blocks if the task isn't finished yet).
+Note:
+The actual use of Future is to hold the result returned by the call() method of a Callable task, 
+so I can retrieve it later when the task completes.
 */
 package dheeraj.multithreadingconcepts;
 

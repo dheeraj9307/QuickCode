@@ -6,7 +6,19 @@ It is implemented using the compare() method.
 For example, if I have an Employee class and I want to sort by name as the default,
 I can implement Comparable in the class itself.But if later I want to sort by salary or ID, 
 I can use Comparator outside the class without touching the existing class logic.
- 
+Note:
+When I'm working with external libraries or classes that I cannot modify directly,
+but I still want to sort the objects based on some custom logic, I use Comparator. 
+Since I can't implement Comparable in those classes, Comparator allows me 
+to define sorting externally without changing the original source code.
+or
+I can’t implement Comparable in classes from external libraries because 
+I don’t have access to modify their source code. In such cases, 
+I use Comparator to define sorting logic externally and keep the design clean.
+Note:
+Even if you try to extend the class and override compareTo(),Java’s Collections.sort() 
+or Stream.sorted() methods will still use the original class, not your subclass 
+(unless you rewrite everything).
  */
 package dheeraj.comparableandcomparator;
 import java.util.ArrayList;
