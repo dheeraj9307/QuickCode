@@ -2,7 +2,7 @@
 WAY TO ITERATE A LIST:
 Enhanced for-loop = for-each loop in Java
 Use enhanced for-loop for simplicity if no removal needed.
-Use Iterator when you want to safely remove elements while iterating.
+Use Iterator when I want to safely remove elements while iterating.
 Use ListIterator for forward and backward traversal.
 Use traditional for-loop when you need the index or want random access.
 Use forEach (lambda) and Stream API for modern, concise code with Java 8+.
