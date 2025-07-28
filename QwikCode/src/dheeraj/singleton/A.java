@@ -1,10 +1,20 @@
 /*
 Singleton Class:
 -We design the class in such that only one object of that class at most can be created.
+✅ Steps to Create a Singleton Class in Java
+Step 1: Create a private static reference variable of the class
+This holds the only object of the class.
+Step 2: Make the constructor private
+This ensures no one can create the object using new from outside the class.
+Step 3: Provide a public static synchronized method to return the instance
+This method is used to get the only instance.
+It ensures the object is created only once (lazy initialization).
 How it works now?
 When multiple threads call getInstance() at the same time,
 only one thread can enter the method at a time because of the synchronized lock.
-Therefore, only one object will be created, no matter how many threads run
+Therefore, only one object will be created, no matter how many threads run.
+Note:- If I remove synchronized, multiple threads may create multiple objects,
+which breaks the Singleton property.
  */
 package dheeraj.singleton;
 
@@ -16,7 +26,7 @@ public class A {
 
 	}
 
-	public static   A getInstance() {
+	public static  synchronized A getInstance() {
 
 		if (a1 == null) {
 			System.out.println(" creating objects.....");
@@ -68,7 +78,7 @@ class Test extends Thread {
 
 
 /* 
-OUTPUT:
+OUTPUT:Can be 
 thread......
 thread......
 thread......
