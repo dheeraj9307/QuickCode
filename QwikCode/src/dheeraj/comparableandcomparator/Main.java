@@ -19,6 +19,16 @@ Note:
 Even if you try to extend the class and override compareTo(),Java’s Collections.sort() 
 or Stream.sorted() methods will still use the original class, not your subclass 
 (unless you rewrite everything).
+What is Future in Java?
+The value returned by call() method  is stored inside the Future object,
+and I use future.get() to access it.
+or
+Future is used to stored returned  value of call() method inside  Future object.
+and I use future.get() to access it.
+Note:
+future.get() will block if the task is not yet completed."
+This is how Future retrieves the result of an asynchronous computation
+
  */
 package dheeraj.comparableandcomparator;
 import java.util.ArrayList;
