@@ -1,0 +1,62 @@
+HashMap Internal Working (Java 8 onwards):           
+-Whenever I create a HashMap object, it internally creates an array of 16 buckets (i.e., indexes) by default. 
+-When I insert a key-value pair, HashMap internally calls the hashCode() method of the key 
+and applies (hashCode & (n - 1)) to calculate the index, where n is the current size of the bucket array.
+-If the bucket is empty, it stores the entry directly. If not, it checks existing entries using equals() 
+to handle duplicate keys or collisions. 
+In case of duplicate keys : 
+HashMap does not allow the duplicates keys so if the keys already exist the new value override the previous one. 
+In case of Collision: 
+when two different key have same hashCode so collision occurs, Entries are stored using a LinkedList.
+From Java 8 onwards, if a bucket has more than 8 entries and the bucket size is at least 64, 
+the LinkedList is changed into a Red-Black Tree so that searching becomes faster. 
+#What HashMap uses internally?
+Before collision: HashMap uses an array( array of buckets).
+After collision (few entries): HashMap uses a Linked List.
+After too many collisions: HashMap uses a Red-Black Tree (Java 8+).  
+✅1. What is Load Factor?
+Load Factor is a measure that decides when to increase the size of the HashMap (i.e., resize or rehash).
+Default load factor is 0.75, which means when the HashMap is 75% full, it will resize.
+✅2. What is Threshold?
+Threshold = Capacity × Load Factor
+It is the maximum number of entries HashMap can hold before it resizes.
+For example:
+    • If capacity = 16
+    • Load factor = 0.75
+    • Threshold = 16 × 0.75 = 12
+So after the 12th entry, HashMap will resize.
+✅3. What is Rehashing?
+Rehashing means increasing the size of the internal array and recalculating the position (index) of all existing entries using the new array size.
+    • When threshold is crossed, HashMap doubles its size (e.g., 16 → 32).
+    • All key-value pairs are re-distributed into the new array.  
+    
+FollowUpQuestion:
+1.Why use (hashCode & (n - 1)) instead of %?
+It’s a faster bitwise operation that works correctly only when n is a power of 2.
+2.What happens when two keys have the same hashCode() and are also equals()?
+The value is overridden (the new value override the previous one. ) because HashMap does not allow duplicate keys.
+3.What happens when two keys have the same hashCode() but are not equals()? 
+OR
+What happens when two different keys have the same hashCode()?
+A collision occurs, and both entries are stored in the same bucket (LinkedList or Tree).  
+
+4.What if the hashCode() method always returns the same value?
+All keys go into the same bucket, causing a long LinkedList (or Tree if Java 8+), degrading performance.
+
+5.Is HashMap thread-safe?
+No, HashMap is not thread-safe. In multithreaded environments, use ConcurrentHashMap or synchronize manually.
+
+6.What happens during resizing (rehashing) in detail?
+When the threshold is crossed, HashMap doubles the bucket array size, and all existing entries are rehashed to new positions.
+
+7.Can the order of elements change in HashMap?
+Yes, because after resizing or rehashing, entries may move to new buckets, changing iteration order.
+
+8.Difference between HashMap and Hashtable?
+HashMap is not synchronized, allows null key and values; Hashtable is synchronized and doesn’t allow null keys.  
+
+
+
+
+
+
