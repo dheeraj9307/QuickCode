@@ -1,0 +1,32 @@
+What is Casting?
+Casting in Java means converting one type of reference to another type.
+It is mainly about parent ↔ child classes in inheritance.
+Two types:
+1:Up-casting (Child → Parent)
+Done automatically (safe).
+Dog d = new Dog();
+Animal a = d;  //up-casting (automatic)
+2:Down-casting (Parent → Child)
+Done manually using cast.
+Animal a = new Dog();
+Dog d = (Dog) a;  //down-casting (explicit cast needed)
+--------------------------------------------------------------------
+What is ClassCastException?
+It happens when you try to cast an object to the wrong type at runtime.
+Example:
+Animal a = new Cat();
+Dog d = (Dog) a;   //runtime error
+Output:
+Exception in thread "main" java.lang.ClassCastException: Cat cannot be cast to Dog
+Reason: a actually refers to a Cat, not a Dog.
+------------------------------------------------------------
+What is NullPointerException (NPE)?
+It occurs when I try to use a reference that points to null (no object).
+String str = null;
+System.out.println(str.length());  // ❌ NPE
+Because str doesn’t point to any object, calling length() causes NullPointerException.
+Safe check:
+if (str != null) {
+    System.out.println(str.length());
+}
+

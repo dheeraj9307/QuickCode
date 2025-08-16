@@ -3,6 +3,8 @@ In case of String, == operator checks references and .equals() method checks con
 But in case of non-String, both == operator and .equals() method check references 
 (specifically, .equals() method by default checks references. 
 But if I want to check contents, then I have to override the .equals() method).
+Note:
+Before casting, always check type and null to avoid ClassCastException or NullPointerException.
 */
 package dheeraj.stringconcepts;
 
