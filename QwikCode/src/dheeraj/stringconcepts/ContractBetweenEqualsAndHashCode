@@ -1,5 +1,4 @@
 /*
-/*
 ##In case of NonString: 
 == equal operator and .equals() method both compare the references but if i want 
 .equals() method compare contents then i have to override the equals() method. And also 
@@ -51,37 +50,4 @@ Dog d = (Dog) a;   //runtime error
 Output:
 Exception in thread "main" java.lang.ClassCastException: Cat cannot be cast to Dog
 Reason: a actually refers to a Cat, not a Dog. 
-
-*/
-package dheeraj.stringconcepts;
-
-class Emp1 {
-	String name;
-
-	Emp1(String name) {
-		this.name = name;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null || getClass() != obj.getClass()) {
-			return false;
-		}
-		Emp1 other = (Emp1) obj;
-		return this.name.equals(other.name);
-	}
-}
-
-public class Test2 {
-	public static void main(String[] args) {
-		Emp1 e1 = new Emp1("dheeraj");
-		Emp1 e2 = new Emp1("dheeraj");
-
-		System.out.println(e1 == e2);// false
-		System.out.println(e1.equals(e2)); // true
-	}
-
-}
+ */

@@ -58,3 +58,13 @@ public class Main {
 		}
 	}
 }
+/*
+OUTPUT:
+Dog barks
+Dog-specific bark method
+Dog barks
+Cat meows
+Exception caught: java.lang.ClassCastException: class dheeraj.code.casting.Cat 
+cannot be cast to class dheeraj.code.casting.Dog (dheeraj.code.casting.Cat and dheeraj.code.casting.Dog are in module QwikCode of loader 'app')
+
+*/
